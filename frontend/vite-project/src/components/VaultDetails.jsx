@@ -2,6 +2,10 @@ import React from 'react'
 import { useState,useEffect } from 'react';
 import axios from 'axios'
 import VaultCard from './VaultCard.jsx';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const VaultDetails = () => {
 	const [vaultEntries,setVaultEntries]=useState('');
 	const [loading,setLoading]=useState(false);

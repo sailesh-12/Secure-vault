@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import dotenv from 'dotenv';
+
+dotenv.config();
 const CreateVault = () => {
   const [category, setCategory] = useState('');
   const [siteName, setSiteName] = useState('');

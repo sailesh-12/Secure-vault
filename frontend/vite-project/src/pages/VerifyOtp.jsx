@@ -3,7 +3,9 @@ import React from 'react';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const VerifyOtp = () => {
 	const location = useLocation();
 	const { message } = location.state || {};
