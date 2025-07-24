@@ -7,7 +7,7 @@ const connectDB=require('./config/connectDb');
 const PORT=process.env.PORT||3000;
 
 app.use(cors({
-  origin: 'http://localhost:5173',  // your React frontend
+  origin: `https://secure-vault-cldu.vercel.app/`,  // your React frontend
   credentials: true                 // 🔥 this allows cookies to be sent
 }));
 app.use(cookie_parser());
@@ -19,5 +19,5 @@ connectDB();
 app.use('/api/auth', require('./routes/authRoutes.js'));
 app.use('/api/vault', require('./routes/vaultRoutes.js'));
 app.listen(PORT,()=>{
-	console.log(`Server is running on http://localhost:${PORT}`);
+	console.log(`Server is running on https://secure-vault-ok7k.onrender.com:${PORT}`);
 })

@@ -16,7 +16,7 @@ const HomePage = () => {
 
   const handleLogout=async()=>{
 		try{
-			const response=await axios.post('http://localhost:3000/api/auth/logout',{},{
+			const response=await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/auth/logout`,{},{
         withCredentials: true,
       });
 			console.log(response);

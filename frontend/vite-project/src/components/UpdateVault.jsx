@@ -29,7 +29,7 @@ const UpdateVault = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:3000/api/vault/${vault._id}`,
+        `${process.env.REACT_APP_API_BASE_URL}/api/vault/${vault._id}`,
         {
           category,
           siteName,

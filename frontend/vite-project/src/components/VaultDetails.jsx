@@ -10,7 +10,7 @@ const VaultDetails = () => {
 		const fetchDetails=async(e)=>{
 			setLoading(true);
 			try{
-				const response=await axios.get('http://localhost:3000/api/vault',{
+				const response=await axios.get(`${process.env.REACT_APP_API_BASE_URL}/api/vault`,{
 					withCredentials: true
 				});
 				console.log(response.data);
