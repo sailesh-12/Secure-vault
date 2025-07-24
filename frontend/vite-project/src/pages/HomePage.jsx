@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import VaultDetails from '../components/VaultDetails.jsx';
 import Cookies from 'js-cookie';
+import dotenv from 'dotenv';
+
+dotenv.config();
 const HomePage = () => {
 	const navigate=useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
