@@ -31,7 +31,7 @@ const UpdateVault = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `${process.env.REACT_APP_API_BASE_URL}/api/vault/${vault._id}`,
+        `${import.meta.env.REACT_APP_API_BASE_URL}/api/vault/${vault._id}`,
         {
           category,
           siteName,

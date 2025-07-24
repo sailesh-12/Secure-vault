@@ -10,7 +10,7 @@ const VaultCard = ({ entry }) => {
   };
   const handleDelete=async()=>{
     try{
-      const res=await axios.delete(`${process.env.REACT_APP_API_BASE_URL}/api/vault/${entry._id}`,{
+      const res=await axios.delete(`${import.meta.env.REACT_APP_API_BASE_URL}/api/vault/${entry._id}`,{
         withCredentials:true
       });
       console.log(res);

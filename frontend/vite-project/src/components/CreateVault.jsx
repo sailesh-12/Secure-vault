@@ -25,7 +25,7 @@ const CreateVault = () => {
     console.log('Vault Entry:', formData);
     // You can now send `formData` to your backend here using fetch or Axios
 	try{
-		const response=await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/vault`,{
+		const response=await axios.post(`${import.meta.env.REACT_APP_API_BASE_URL}/api/vault`,{
 			formData
 		},{
 			withCredentials: true

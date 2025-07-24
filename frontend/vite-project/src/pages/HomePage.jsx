@@ -4,9 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import VaultDetails from '../components/VaultDetails.jsx';
 import Cookies from 'js-cookie';
-import dotenv from 'dotenv';
 
-dotenv.config();
 const HomePage = () => {
 	const navigate=useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -19,7 +17,7 @@ const HomePage = () => {
 
   const handleLogout=async()=>{
 		try{
-			const response=await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/auth/logout`,{},{
+			const response=await axios.post(`${import.meta.env.REACT_APP_API_BASE_URL}/api/auth/logout`,{},{
         withCredentials: true,
       });
 			console.log(response);
