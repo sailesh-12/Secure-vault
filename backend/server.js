@@ -6,10 +6,23 @@ const app=express();
 const connectDB=require('./config/connectDb');
 const PORT=process.env.PORT||3000;
 
+const allowedOrigins = [
+    'http://localhost:5173',
+    'https://secure-vault-cldu.vercel.app',
+    'https://secure-vault-kcu8.vercel.app'
+];
+
 app.use(cors({
-    origin: `https://secure-vault-cldu.vercel.app/`,  // your React frontend
-  credentials: true                 // 🔥 this allows cookies to be sent
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    credentials: true
 }));
+
 app.use(cookie_parser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
