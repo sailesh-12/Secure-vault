@@ -1,8 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import dotenv from 'dotenv';
 
-dotenv.config();
 const VaultCard = ({ entry }) => {
   const navigate=useNavigate();
   const handleEdit = () => {
@@ -10,7 +8,7 @@ const VaultCard = ({ entry }) => {
   };
   const handleDelete=async()=>{
     try{
-      const res=await axios.delete(`${import.meta.env.REACT_APP_API_BASE_URL}/api/vault/${entry._id}`,{
+      const res=await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/vault/${entry._id}`,{
         withCredentials:true
       });
       console.log(res);

@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import dotenv from 'dotenv';
 
-dotenv.config();
 const CreateVault = () => {
   const [category, setCategory] = useState('');
   const [siteName, setSiteName] = useState('');
@@ -25,7 +23,7 @@ const CreateVault = () => {
     console.log('Vault Entry:', formData);
     // You can now send `formData` to your backend here using fetch or Axios
 	try{
-		const response=await axios.post(`${import.meta.env.REACT_APP_API_BASE_URL}/api/vault`,{
+		const response=await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/vault`,{
 			formData
 		},{
 			withCredentials: true

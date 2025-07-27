@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import dotenv from 'dotenv';
 
-dotenv.config();
 const UpdateVault = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
@@ -31,7 +29,7 @@ const UpdateVault = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `${import.meta.env.REACT_APP_API_BASE_URL}/api/vault/${vault._id}`,
+        `${import.meta.env.VITE_API_BASE_URL}/api/vault/${vault._id}`,
         {
           category,
           siteName,

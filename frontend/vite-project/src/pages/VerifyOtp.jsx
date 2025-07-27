@@ -3,9 +3,7 @@ import React from 'react';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import dotenv from 'dotenv';
 
-dotenv.config();
 const VerifyOtp = () => {
 	const location = useLocation();
 	const { message } = location.state || {};
@@ -22,7 +20,7 @@ const VerifyOtp = () => {
 
 		try {
 			const response = await axios.post(
-				`${import.meta.env.REACT_APP_API_BASE_URL}/api/auth/verify-otp`,
+				`${import.meta.env.VITE_API_BASE_URL}/api/auth/verify-otp`,
 				{ email, otp },
 				{ withCredentials: true }
 			);

@@ -16,7 +16,7 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(`${import.meta.env.REACT_APP_API_BASE_URL}/api/auth/login`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/login`, {
         email,
         password,
       });

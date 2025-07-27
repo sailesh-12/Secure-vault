@@ -1,9 +1,7 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import dotenv from 'dotenv';
 
-dotenv.config();
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -13,13 +11,15 @@ const Signup = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError]     = useState(false);
 
+  console.log(import.meta.env.VITE_API_BASE_URL);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError(false);
 
     try {
-      const response = await axios.post(`${import.meta.env.REACT_APP_API_BASE_URL}/api/auth/signup`, {
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/auth/signup`, {
         username,
         email,
         password
